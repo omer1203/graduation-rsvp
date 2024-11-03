@@ -1,0 +1,198 @@
+ /*resizing for cleaner look*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/*setting up page backgorund/font style*/
+body{
+    display: flex;/*center the content*/
+    justify-content:center;
+    align-items: center;
+    height: auto; 
+    padding: 20px;
+    background: linear-gradient(135deg,#f3c1e2, #c1e8f3); /*gradient backgroound of pink and blue*/
+    font-family: "Tiro Bangla", serif;
+
+}
+
+
+/*styling the main invitation card*/
+.card{
+    background-color: #ffffff;/*white background*/
+    padding: 20px; /*padding inside the card*/
+    border-radius: 10px;/*rounded corners*/
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Soft shadow effect */
+    width: auto; /*fixed width for the card*/
+    max-width: 350px;
+    text-align: center;
+    transition: transform 0.2s; /*scaling transition on hover*/
+}
+
+
+
+/*slight scaling effect when hovering over the card*/
+.card:hover{
+    transform: scale(1.05); /*scales the card up to 5% when you hover over it*/
+}
+
+
+/*stying the main title*/
+h1{
+    color: #58045d; /*pink color for the title*/
+    font-family: "Tiro Bangla", serif;
+    font-size : 1.8em;
+    margin-bottom: 15px; /*space below the title*/
+}
+
+
+/*styling the image*/
+.graduate-photo{
+    width: 100%; /*full width of the card*/
+    border-radius: 10px; /*rounded corners*/
+    margin: 10px 0; /*space above and below the pic*/
+}
+
+
+/*text styling*/
+p{
+    color: #333; /*dark gray color that helps readiibility*/
+    margin-bottom: 10px; /*space below each para*/
+}
+
+
+/*styling the name input*/
+input[type="text"]{
+    width: 100%;/*full width of the card*/
+    padding: 10px;/*padding indie the input*/
+    margin-top: 10px;/*spade above the input*/
+    border-radius: 5px;/*rounded corners for the input*/
+    border: 1px solid #ccc; /*light grey border*/
+    font-size: 1em; /*Standard font size */
+}
+
+
+input[type="number"]{
+    width: 100%;
+    padding: 10px;/*padding indie the input*/
+    margin-top: 10px;/*spade above the input*/
+    border-radius: 5px;/*rounded corners for the input*/
+    border: 1px solid #ccc; /*light grey border*/
+    font-size: 1em; /*Standard font size */
+}
+
+
+/*RSVP button container*/
+.rsvp-buttons{
+    display: flex; /*flexbox layout which has even spacing*/
+    gap: 10px; /*the spave btw each button*/
+    justify-content: center; /*centers the buttons*/
+    margin-top: 10px; /*space above the buttons group*/
+}
+
+
+/*styling for RSVP options buttons*/
+.rsvp-option{
+    padding: 10px 20px; /*padding inside each button*/
+    border: 2px solid #6a5acd; /*border color to match the theme*/
+    border-radius: 5px;/*rounded corners*/
+    background-color: #ffffff; /*white backgrtound on buttons*/
+    color: #6a5acd; /*matching teh border*/
+    cursor: pointer; /*cursor when hovering over the button*/
+    transition: background-color 0.3s, color 0.3s; /*smookth color transitions*/
+
+}
+
+
+/*hover effect for button*/
+.rsvp-option:hover{
+    background-color: #6a5acd;/*changes the background color when hovered over*/
+    color: #ffffff;/*chanegs the color of text to white when hovered over*/
+}
+
+
+/*selected button styling, sets it to the same as when hovered over*/
+.rsvp-option.selected{
+    background-color: #6a5acd;
+    color: #ffffff;
+}
+
+
+/*submit button styling*/
+button[type="submit"]{
+    width: 100%; /*full width*/
+    padding: 10px;/*padding indie the input*/
+    margin-top: 10px;/*spade above the input*/
+    background-color: #590759; /*same color mathcing the theme*/
+    border: none;
+    color: white;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 5px; /*rounded corners for the button*/
+    transition: background-color 0.3s;
+    font-family: "Tiro Bangla", serif;
+
+}
+
+
+/*hover effect for submit button*/
+button[type="submit"]:hover{
+    background-color: #6a19e4; /*slightly darker pink on hover*/
+}
+
+
+/*show confirmation by unhiding it and setting the opacity*/
+#confirmation.show{
+    opacity: 1;/*displays the message*/
+}
+
+
+/*styling the messages for when option selected*/
+#yesMessage, #noMessage, #maybeMessage {
+    margin-top: 20px;/*space above the message*/
+    padding: 15px; /*paddingh inside the message box*/
+    border: 2px solid #6a5acd; /*border co0lor aligningh ewith the theme*/
+    border-radius: 8px; /*rounded corners*/
+    background-color: #f3e6ff; /*light purple color*/
+    color: #333; /*dark color to read*/
+    text-align: center;
+}
+
+
+/*styling the header for each message*/
+#yesMessage h3, #noMessage h3, #maybeMessage h3 {
+    color: #5e145e;
+    font-size: 'Dancing Script' , cursive;
+    font-size: 1.4em; 
+    margin-bottom: 10px; /*space below the heading*/
+}
+
+
+/*transitions effect for messages displayed*/
+#confirmation, #yesMessage, #noMessage, #maybeMessage {
+    display: none; /* Hidden until 'show' is added */
+    opacity: 0;
+    transition: opacity 0.5s ease; /* Smooth fade-in effect */
+}
+
+/* Show class makes elements fully visible */
+.show {
+    display: block !important; /* Ensures visibility */
+    opacity: 1; /* Fully visible */
+}
+
+/*making the message visible*/
+#confirmation.show, #yesMessage.show, #noMessage.show, #maybeMessage.show {
+    display: block;
+    opacity: 1;
+}
+
+
+/* error message styling*/
+.error-message{
+    color: red;
+    font-size: 0.9em;
+    margin-top: 5px;
+}

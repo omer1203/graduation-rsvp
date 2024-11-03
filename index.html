@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"> <!--character encoding to utf-8-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><!--creating page scale to fit phones by setting the viewport-->
+
+    <title>Anam's Graduation Invitation</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Delius+Swash+Caps&family=Kalnia+Glaze:wght@100..700&family=Tiro+Bangla:ital@0;1&display=swap');
+    </style>
+    <link rel="stylesheet" href="style.css"> <!--links to the css file-->
+</head>
+<body>
+    <div class="card"><!--card ocntainer which holds all of the invitation content-->
+        <h1>Let's Celebrate Anam</h1>
+        <img src="anampic.jpg" alt="Graduate Photo" class="graduate-photo"><!--for the image, alt jus creates a alternate text for accessibility and class is needed to apply styles in css file-->
+        <p>Join us in celebrating the graduation of Anam Raziuddin.</p>
+        <p>BSN from Texas Woman's University</p>
+        <p>Date: December 28, 2024</p>
+        <p>Time: 6:30PM</p>
+
+        <p>Message or Call Us</p> 
+        <!--MAIN RSVP FORM-->
+        <form id="rsvpForm">
+            <h2>RSVP HERE</h2>
+            <input type="text" name="name" placeholder="Your Name" required> <!--text input where name="name" identifies the data sent and placeholder is your name to display hint-->
+            <p id="nameError" class="error-message" style="display: none;">Please enter your name.</p> <!--name not entered error handling-->
+            <input type="number" name="guests" placeholder="Total Number of Guests" min="1" step="1" required>
+            <p id="guestsError" class="error-message" style="display: none;">Please choose number of guests.</p><!--number of guests not entered error handling-->
+            <!--container for rsvp options-->
+            <div class ="rsvp-buttons">
+                <!--following are the buttons with choices-->
+                <button type="button" class="rsvp-option" data-response ="yes" aria-label="RSVP Yes">YES</button>
+                <button type="button" class="rsvp-option" data-response ="no" aria-label="RSVP No">NO</button>
+                <button type="button" class="rsvp-option" data-response ="maybe" aria-label="RSVP Maybe">MAYBE</button>
+            </div>
+            <p id="rsvpError" class="error-message" style="display: none;">Please select a RSVP choice.</p><!--rsvp choice not entered error handling-->
+            <input type="hidden" name="response" id="response" required><!--this is hidden and name identifies the data sent to server along with id is for js to set the input value -->
+            <button type="submit">Submit RSVP</button> <!--submit allows to submit the form and js will handle the forms data-->
+        </form>
+        <!--confirmation message which is previosly hidden using the display: none-->
+        <p id="confirmation" style="display: none;" >Thank you for your RSVP!!</p>  <!--the id allows js to access and display this message-->
+        <!--each container handles for different submission yes, no, maybe-->
+        <div id="yesMessage" style="display: none;">
+            <h3>THANK YOU! SO EXCITED FOR YOU TO ATTEND!</h3>
+            <p>Please message me and let me know your plans</p>
+            <p>Location: The Raziuddin Crib</p>
+        </div>
+        <div id="noMessage" style="display: none;">
+            <h3>Ah, issokay if you're not able to make it</h3>
+            <p>If you do change your mind anytime, do let us know and we will be happy to welcome you.</p>
+        </div>
+        <div id="maybeMessage" style="display: none;">
+            <h3>A maybe is basically a YES</h3>
+            <p>Please message me and let me know your plans.</p>
+        </div>
+    </div>
+    <script src ="script.js"></script> <!--links to the js file to handle interaction and form submittion. js handles button selection, form submission and response handling-->
+</body>
+</html>
