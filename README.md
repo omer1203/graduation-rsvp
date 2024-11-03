@@ -1,2 +1,4 @@
-# graduation-rsvp
-Full Stack RSVP System for Graduation Invitation.
+# Graduation RSVP System
+## Project Overview
+## Features
+## Software Used
