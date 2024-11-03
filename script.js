@@ -65,7 +65,7 @@ document.getElementById('rsvpForm').addEventListener('submit', async (event) => 
     formBox.style.display = 'none'; // hiode form sand show confirmation
 
     try {
-        const res = await fetch('https://graduation-rsvp.onrender.com', {
+        const res = await fetch('https://graduation-rsvp.onrender.com/rsvp', {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({name, guests: parseInt(guests), response})

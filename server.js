@@ -5,7 +5,7 @@
 
 //start by importing libraries
 const express = require('express');// express to handle web server func
-const {Pool} = require('pg');// PostgreSQl client for cloud database
+const { Pool } = require('pg');// PostgreSQl client for cloud database
 const dotenv = require('dotenv') // dotenv for loading environment variables from a .env file
 const cors = require('cors');
 
@@ -18,7 +18,7 @@ const PORT = process.env.PORT || 3000; // define the port from env variable or d
 app.use(cors()); //enable cors for all routes
 app.use(express.json()); // enables json parsing in req bodies
 
-//establishing a connection to mysql using credentials from .env
+//establishing a connection to postgreSQL using credentials from .env
 const db = new Pool({
     host: process.env.DB_HOST, // databse host
     user: process.env.DB_USER, // database user
@@ -27,9 +27,6 @@ const db = new Pool({
     port: process.env.DB_PORT
 });
 
-app.get('/', (req, res) => {
-    res.send('RSVP server is running');
-});
 
 //define a route to check if server is working
 app.get('/', (req, res) => {
