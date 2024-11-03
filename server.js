@@ -28,7 +28,11 @@ const db = new Pool({
     port: process.env.DB_PORT
 });
 
-
+//to log when someone accesses the page
+app.get('/', (req,res)=>{
+    console.log('RSVP page accessed');
+    res.sendFile(__dirname + '/frontend/index.html');
+})
 //creating an enpoint to handle form submission
 app.post('/rsvp', async (req, res) => {
     const { name, guests, response } = req.body;
@@ -40,6 +44,7 @@ app.post('/rsvp', async (req, res) => {
     try {
         const query = 'INSERT INTO rsvps (name, guests, response) VALUES ($1, $2, $3)';
         await db.query(query, [name, guests, response]);
+        console.log(`RSVP submitted: Name - ${name}, Guests - ${guests}, Response - ${response}`);
         res.json({ message: 'RSVP saved successfully' });
     } catch (err) {
         console.error('Error saving RSVP:', err);

@@ -14,8 +14,7 @@
     <div class="card"><!--card ocntainer which holds all of the invitation content-->
         <h1>Let's Celebrate Anam</h1>
         <img src="anampic.jpg" alt="Graduate Photo" class="graduate-photo"><!--for the image, alt jus creates a alternate text for accessibility and class is needed to apply styles in css file-->
-        <p>Join us in celebrating the graduation of Anam Raziuddin.</p>
-        <p>BSN from Texas Woman's University</p>
+        <p>Join us in celebrating the graduation of Anam Raziuddin in BSN from Texas Woman's University</p>
         <p>Date: December 28, 2024</p>
         <p>Time: 6:30PM</p>
 
@@ -25,7 +24,7 @@
             <h2>RSVP HERE</h2>
             <input type="text" name="name" placeholder="Your Name" required> <!--text input where name="name" identifies the data sent and placeholder is your name to display hint-->
             <p id="nameError" class="error-message" style="display: none;">Please enter your name.</p> <!--name not entered error handling-->
-            <input type="number" name="guests" placeholder="Total Number of Guests" min="1" step="1" required>
+            <input type="number" name="guests" placeholder="Total Number of Guests" min="0" step="1" required>
             <p id="guestsError" class="error-message" style="display: none;">Please choose number of guests.</p><!--number of guests not entered error handling-->
             <!--container for rsvp options-->
             <div class ="rsvp-buttons">
