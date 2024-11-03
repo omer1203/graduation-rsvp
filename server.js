@@ -17,6 +17,7 @@ const PORT = process.env.PORT || 3000; // define the port from env variable or d
 
 app.use(cors()); //enable cors for all routes
 app.use(express.json()); // enables json parsing in req bodies
+app.use(express.static('frontend'));
 
 //establishing a connection to postgreSQL using credentials from .env
 const db = new Pool({
@@ -27,11 +28,6 @@ const db = new Pool({
     port: process.env.DB_PORT
 });
 
-
-//define a route to check if server is working
-app.get('/', (req, res) => {
-    res.send('RSVP server is running');
-});
 
 //creating an enpoint to handle form submission
 app.post('/rsvp', async (req, res) => {
